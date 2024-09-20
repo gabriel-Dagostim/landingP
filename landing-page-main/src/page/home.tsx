@@ -49,16 +49,16 @@ export default function Home() {
                     <div className="desktop-only">
                         <ul className="flex gap-1">
                             <li>
-                                <a href="#">Home</a>
+                                <a href="https://zenith.gabrieldagostim.com/">Home</a>
                             </li>
                             <li>
-                                <a href="#solution">Soluções</a>
+                                <a href="https://www.splabor.com.br/blog/medidor-de-ph/3-maneiras-de-se-medir-o-ph-da-agua/#:~:text=Para%20medir%20o%20pH%20da,de%20mudar%C3%A1%20de%20cor%20momentaneamente.">Soluções</a>
                             </li>
                             <li>
                                 <a href="https://www.peixebr.com.br/">Depoimentos</a>
                             </li>
                             <li>
-                                <a href="#pricing">Preços</a>
+                                <a href="https://www.binance.com/pt-BR/markets/overview">Preços</a>
                             </li>
                             <li>
                                 <a href="https://www.gabrieldagostim.com/">Contato</a>
