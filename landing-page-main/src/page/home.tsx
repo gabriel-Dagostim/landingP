@@ -55,13 +55,13 @@ export default function Home() {
                                 <a href="#solution">Soluções</a>
                             </li>
                             <li>
-                                <a href="#testimonials">Depoimentos</a>
+                                <a href="https://www.peixebr.com.br/">Depoimentos</a>
                             </li>
                             <li>
                                 <a href="#pricing">Preços</a>
                             </li>
                             <li>
-                                <a href="#contact">Contato</a>
+                                <a href="https://www.gabrieldagostim.com/">Contato</a>
                             </li>
                         </ul>
                     </div>
