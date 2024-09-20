@@ -1,15 +1,22 @@
-.reverse-color {
-    color: var(--primary-color);
+/* Header styling */
+.header-fixed {
+    position: fixed;
+    width: 100vw; /* A largura do header será igual à largura da viewport */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garantir que o header fique sobre os outros elementos */
+    background-color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
+    border-bottom-left-radius: 5rem;
+    border-top-left-radius: 5rem;
 }
 
-.reverse-color:hover {
-    color: var(--third-text-color);
+.container {
+    padding-top: 80px; /* Compensar a altura do header fixo */
 }
 
-.ml-lg {
-    margin-right: 2.875rem;
-}
-
+/* Mobile Menu */
 .mobile-menu {
     display: initial;
     z-index: 3;
@@ -39,14 +46,10 @@
     font-size: var(--fs-lg);
 }
 
-@media (width >=1280px) {
-    header {
-        position: relative;
-        z-index: 1;
-    }
-
-    nav>img {
-        display: initial;
+/* Desktop-only Styles */
+@media (min-width: 1280px) {
+    .desktop-only {
+        display: flex;
     }
 
     .mobile-menu {
@@ -56,4 +59,16 @@
     .mobile-menu-content {
         display: none;
     }
+}
+
+.reverse-color {
+    color: var(--primary-color);
+}
+
+.reverse-color:hover {
+    color: var(--third-text-color);
+}
+
+.ml-lg {
+    margin-right: 2.875rem;
 }

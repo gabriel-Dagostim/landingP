@@ -4,9 +4,10 @@
     height: 90vh;
     display: flex;
     overflow-y: hidden;
+    position: relative;
 }
 
-#hero>img {
+#hero > img {
     position: absolute;
     right: 0;
     height: 60%;
@@ -26,51 +27,78 @@
     gap: 1.75rem;
 }
 
-#hero .content>div {
+#hero .content > div {
     width: fit-content;
     align-self: center;
     margin-bottom: 20%;
 }
 
-@media (width >=1280px) {
+/* Efeito de digitação para o h1 */
+#typing-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #034f5b;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 0; /* Começa com largura zero */
+    border-right: 2px solid #034f5b; /* Cursor de digitação */
+    box-sizing: border-box;
+    animation: typing 3.5s steps(40, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0; /* Inicia a animação com largura 0 */
+    }
+    to {
+        width: 100%; /* Aumenta até 100% da largura do container */
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+    100% {
+        border-color: #034f5b;
+    }
+}
+
+/* Ajustes para telas maiores */
+@media (width >= 1280px) {
     #hero {
         background: var(--bg-color);
         border-top: none;
+    }
 
-        >span {
-            position: absolute;
-            top: 0;
-        }
+    #hero > span {
+        position: absolute;
+        top: 0;
+    }
 
-        >img {
-            top: 0;
-            height: 82%;
-            padding-left: 55%;
-        }
+    #hero > img {
+        top: 0;
+        height: 82%;
+        padding-left: 55%;
+    }
 
+    .content {
+        gap: 2.5rem;
+    }
 
+    .content > div :first-child {
+        width: 10.625rem;
+    }
 
-        .content p {
-            width: 80%;
-            align-self: center;
-        }
+    .content p {
+        width: 80%;
+        align-self: center;
+    }
 
-        .content {
-            gap: 2.5rem;
-        }
-
-        .content>div :first-child {
-            width: 10.625rem;
-        }
-
-        .content p {
-            width: 80%;
-            align-self: center;
-        }
-
-        .content p:first-of-type {
-            color: var(--primary-color);
-            font-weight: var(--fw-bold);
-        }
+    .content p:first-of-type {
+        color: var(--primary-color);
+        font-weight: var(--fw-bold);
     }
 }

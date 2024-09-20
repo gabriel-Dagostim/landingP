@@ -1,121 +1,90 @@
-#solutions {
+.solutions-container {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
     text-align: center;
-    margin: 0 auto;
-    padding: 60px 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    max-width: 1200px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .section-title {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
+    color: #034f5b;
     margin-bottom: 20px;
-    color: #006a7c;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .section-description {
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-    color: #666;
-    max-width: 800px;
-    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 40px;
 }
 
 .solutions-grid {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
     flex-wrap: wrap;
-    margin-top: 20px;
-    padding: 0 10px;
 }
 
 .solution-card {
-    background-color: #03aac7;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    min-width: 250px;
+    background-color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    max-width: 320px;
     flex: 1;
-    margin: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.solution-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.solution-card h3 {
-    font-size: 1.4rem;
-    color: #03aac7;
-    margin-bottom: 10px;
-}
-
-.solution-card p {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-.solution-card {
-    background-color: #afeaf5;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    min-width: 250px;
-    flex: 1;
-    margin: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
+    margin: 15px;
+    text-align: left;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
-.solution-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #03aac7;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-    transform-origin: left;
-}
-
-.solution-card:hover::after {
-    transform: scaleX(1);
-}
-
-.python-logo {
-    width: 50px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.analise-logo {
-    width: 50px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.raspagem-logo {
-    width: 50px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
 .solution-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.solution-logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.solution-card h3 {
+    font-size: 1.6rem;
+    color: #034f5b;
+    margin-bottom: 15px;
+}
+
+.solution-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.learn-more {
+    display: block;
+    padding: 12px 24px;
+    background-color: #03aac7;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.learn-more:hover {
+    background-color: #034f5b;
+    transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {
@@ -125,15 +94,19 @@
     }
 
     .solution-card {
-        max-width: 90%;
-        margin-bottom: 20px;
+        max-width: 100%;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
 
     .section-description {
-        font-size: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .learn-more {
+        width: 100%;
+        max-width: none;
     }
 }
