@@ -26,7 +26,7 @@ Este repositório contém a landing page para nossa solução de **Monitoramento
 
 Você pode visualizar o projeto online no seguinte link:
 
-[Zenith Piscicultura - Monitoramento Inteligente](http://zenith.gabrieldagostim.com/)
+[Zenith Piscicultura - Monitoramento Inteligente](https://lp.gabrieldagostim.com/)
 
 ## Como Visualizar o Projeto Localmente
 
