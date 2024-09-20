@@ -591,8 +591,7 @@ export default function Home() {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.1344326701743!2d-53.53085462570978!3d-24.955420581334518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ef377da857d8db%3A0x123456789abcdef!2sRua+da+Piscicultura%2C+123%2C+Cascavel+-+PR!5e0!3m2!1sen!2sbr!4v1695227896543!5m2!1sen!2sbr" 
                 width="100%" 
                 height="400" 
-                style={{ border: "0" }} 
-                allowFullScreen="" 
+                style={{ border: "0" }}
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
