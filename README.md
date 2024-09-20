@@ -1,40 +1,72 @@
-# Calculadora MVC flavio
 
+# Landing Page para Monitoramento de Piscicultura
 
-# Projeto de Monitoramento Inteligente de Piscicultura
+Este repositório contém a landing page para nossa solução de **Monitoramento Inteligente de Piscicultura**, que utiliza hardware especializado para medir e monitorar continuamente parâmetros essenciais da água, como **pH**, **oxigenação** e **temperatura**. Nosso objetivo é oferecer uma experiência otimizada para piscicultores, garantindo um ambiente saudável e eficiente para o cultivo de peixes.
 
-Bem-vindo ao nosso projeto de **Monitoramento Inteligente de Piscicultura**, uma solução inovadora para o gerenciamento eficiente de tanques de piscicultura. Nossa solução utiliza hardware especializado para medir e monitorar continuamente parâmetros essenciais da água, como **pH**, **oxigenação**, e **temperatura**, garantindo um ambiente ideal para o cultivo de peixes e otimização da produção.
+![Imagem da Landing Page](https://i.imgur.com/ZA0TRRx.png)
 
-## Funcionalidades
+## Funcionalidades da Landing Page
 
-- **Monitoramento de pH**: A precisão no controle do pH garante a saúde dos peixes e o equilíbrio do ambiente aquático.
-- **Medição de oxigenação**: O sistema rastreia os níveis de oxigênio na água, fundamental para a sobrevivência dos peixes.
-- **Controle de temperatura**: Detecta mudanças na temperatura da água, essencial para manter o habitat adequado.
-- **Alertas e notificações**: Envia alertas sobre alterações críticas nos níveis de pH, oxigênio e temperatura.
-- **Interface intuitiva**: Fácil de usar, com dados em tempo real e histórico de medições.
+- **Apresentação do Sistema**: Descreve como o monitoramento de pH, oxigênio e temperatura da água pode otimizar a produção de peixes.
+- **Testemunhos de Clientes**: Feedback de usuários reais que utilizam nossa solução.
+- **Design Responsivo**: Interface adaptável para todos os dispositivos, desde desktops até smartphones.
+- **Foco em Conversão**: Inclui CTAs (chamadas para ação) estratégicos para aumentar a taxa de conversão e engajamento.
 
 ## Tecnologias Utilizadas
 
-- **Hardware**: 
-  - Sensores de pH, oxigênio e temperatura.
-  - Microcontrolador (ESP8266, Arduino).
-  - Módulos de conectividade sem fio para transmissão de dados.
+- **Frontend**:
+  - **HTML5**, **CSS3**, **JavaScript**, **NodeJs**, **React**.
+  - **TailwindCSS** para um design moderno e responsivo.
+  - **jQuery** para manipulação de DOM e interatividade.
   
-- **Software**: 
-  - **Frontend**: Interface amigável para visualizar os dados em tempo real.
-  - **Backend**: Armazena e processa as medições dos sensores.
-  - **Integração com alertas**: Notificações automáticas em caso de alterações críticas nos parâmetros da água.
+- **Backend**:
+  - Implementação futura para integrar com os dados de monitoramento em tempo real.
 
-## Como Usar
+## Visualizar o Projeto Online
 
-### Requisitos
+Você pode visualizar o projeto online no seguinte link:
 
-- Sensores de pH, oxigenação e temperatura conectados ao hardware de monitoramento.
-- Um microcontrolador configurado para ler e transmitir os dados dos sensores.
-- Acesso ao painel de controle online ou aplicativo para monitorar as condições dos tanques.
+[Zenith Piscicultura - Monitoramento Inteligente](http://zenith.gabrieldagostim.com/)
 
-### Passos para Instalação
+## Como Visualizar o Projeto Localmente
 
 1. Clone o repositório para o seu ambiente local:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/gabriel-Dagostim/landingP.git
+   ```
+2. Navegue até a pasta do projeto:
+   ```bash
+   cd landingP
+   ```
+3. Baixe os modulos do NodeJs
+  ```node
+   npm i
+   ```
+
+4. Utilize o comando para iniciar o projeto 
+  ```node
+  npm run dev
+  ```
+
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para seguir os passos abaixo para colaborar com melhorias:
+
+1. Faça um fork deste repositório.
+2. Crie uma nova branch para suas modificações: `git checkout -b minha-modificacao`.
+3. Commit suas mudanças: `git commit -m 'Adiciona uma nova feature'`.
+4. Envie suas mudanças para o repositório remoto: `git push origin minha-modificacao`.
+5. Abra um pull request para revisar as alterações.
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT. Para mais detalhes, consulte o arquivo [LICENSE](LICENSE).
+
+## Contato
+
+Para dúvidas ou sugestões, entre em contato:
+
+- **Nome**: Gabriel Dagostim
+- **Email**: gabriel@zenith.com
+- **GitHub**: [gabriel-Dagostim](https://github.com/gabriel-Dagostim)
