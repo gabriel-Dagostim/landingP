@@ -4,6 +4,9 @@ import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+
 import Close from "../assets/close.svg";
 import Menu from "../assets/hamburguer.svg";
 import datalogo from "../assets/images/database.png";
@@ -13,17 +16,17 @@ import HeroRectangleOne from "../assets/images/rectangleOne.png";
 import HeroRectangleTwo from "../assets/images/rectangleTwo.png";
 import Logo from "../assets/logo.png";
 import Button from "../components/button.tsx";
-import fishinge from "../assets/images/fishing.svg"
+import fishinge from "../assets/images/fishing.svg";
 import "../styles/header.css";
 import "../styles/hero.css";
 import "../styles/solutions.css";
 import "../styles/testimonial.css";
 import "../styles/utility.css";
 
-import agro01 from "../assets/images/agro1.jpg"
-import agro02 from "../assets/images/agro2.jpeg"
-import agro03 from "../assets/images/agro3.jpg"
-import agro04 from "../assets/images/agro4.webp"
+import agro01 from "../assets/images/agro1.jpg";
+import agro02 from "../assets/images/agro2.jpeg";
+import agro03 from "../assets/images/agro3.jpg";
+import agro04 from "../assets/images/agro4.webp";
 
 
 
@@ -43,48 +46,45 @@ export default function Home() {
 
     return (
         <>
-            <header className="header-fixed py-sm">
-    <nav className="flex items-center justify-between">
-        <img src={Logo} alt="Logo DonaFrost" width={150} height={120} />
-        <div className="desktop-only">
-            <ul className="flex gap-1">
-                <li><a href="https://zenith.gabrieldagostim.com/">Home</a></li>
-                <li><a href="https://www.splabor.com.br/blog/medidor-de-ph/3-maneiras-de-se-medir-o-ph-da-agua/#:~:text=Para%20medir%20o%20pH%20da,de%20mudar%C3%A1%20de%20cor%20momentaneamente.">Soluções</a></li>
-                <li><a href="https://www.peixebr.com.br/">Depoimentos</a></li>
-                <li><a href="https://www.binance.com/pt-BR/markets/overview">Preços</a></li>
-                <li><a href="https://www.gabrieldagostim.com/">Contato</a></li>
+            <header className="header-fixed" style={{ backgroundColor: "#ffffff", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)", padding: "10px 20px", position: "fixed", width: "100%", zIndex: "1000" }}>
+    <nav className="flex items-center justify-between" style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        <a href="/">
+            <img src={Logo} alt="Logo Zenith" width={120} height={80} style={{ cursor: "pointer" }} />
+        </a>
+        
+        <div className="desktop-only" style={{ display: "flex", gap: "20px", alignItems: "center" }}>
+            <ul className="flex gap-4" style={{ listStyle: "none", margin: 0, padding: 0 }}>
+                <li><a href="https://zenith.gabrieldagostim.com/" style={linkStyle}>Home</a></li>
+                <li><a href="https://www.splabor.com.br/blog/medidor-de-ph/" style={linkStyle}>Soluções</a></li>
+                <li><a href="https://www.peixebr.com.br/" style={linkStyle}>Depoimentos</a></li>
+                <li><a href="https://www.binance.com/pt-BR/markets/overview" style={linkStyle}>Preços</a></li>
+                <li><a href="https://www.gabrieldagostim.com/" style={linkStyle}>Contato</a></li>
             </ul>
-        </div>
-        <div className="desktop-only">
-            <div className="flex items-center">
-                <a className="reverse-color ml-lg" href="#">Login</a>
-                <Button text="Cadastre-se" />
+            <div>
+                <a href="#" style={{ ...linkStyle, marginRight: "15px", color: "#007d99", fontWeight: "bold" }}>Login</a>
+                <Button text="Cadastre-se" style={{ padding: "10px 20px", backgroundColor: "#00a8cc", color: "#ffffff", border: "none", borderRadius: "5px" }} />
             </div>
         </div>
-        <div className="mobile-menu">
-            {showMobileMenu ? (
-                <div className="mobile-menu-content">
-                    <div className="container flex">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#solution">Soluções</a></li>
-                            <li><a href="https://www.peixebr.com.br/">Depoimentos</a></li>
-                            <li><a href="https://pointerpointer.com/">Preços</a></li>
-                            <li><a href="https://www.gabrieldagostim.com/">Contato</a></li>
-                            <li><a className="reverse-color" href="#">Login</a></li>
-                        </ul>
-                        <span onClick={() => setShowMobileMenu(!showMobileMenu)} className="btn-wrapper">
-                            <img src={Close} alt="ícone fechar menu" width={24} height={24} />
-                        </span>
-                    </div>
-                </div>
-            ) : (
-                <span onClick={() => setShowMobileMenu(!showMobileMenu)} className="btn-wrapper">
-                    <img src={Menu} alt="ícone menu" width={24} height={24} />
-                </span>
-            )}
+
+        <div className="mobile-menu" style={{ display: "flex", alignItems: "center" }}>
+            <span onClick={() => setShowMobileMenu(!showMobileMenu)} className="btn-wrapper" style={{ cursor: "pointer" }}>
+                <img src={showMobileMenu ? Close : Menu} alt="Menu" width={24} height={24} />
+            </span>
         </div>
     </nav>
+
+    {showMobileMenu && (
+        <div className="mobile-menu-content" style={{ position: "absolute", top: "100%", left: 0, width: "100%", backgroundColor: "#ffffff", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)", padding: "20px 0" }}>
+            <ul style={{ listStyle: "none", margin: 0, padding: "0 20px", textAlign: "center" }}>
+                <li style={{ marginBottom: "10px" }}><a href="#" style={linkStyle}>Home</a></li>
+                <li style={{ marginBottom: "10px" }}><a href="#solution" style={linkStyle}>Soluções</a></li>
+                <li style={{ marginBottom: "10px" }}><a href="https://www.peixebr.com.br/" style={linkStyle}>Depoimentos</a></li>
+                <li style={{ marginBottom: "10px" }}><a href="https://pointerpointer.com/" style={linkStyle}>Preços</a></li>
+                <li style={{ marginBottom: "10px" }}><a href="https://www.gabrieldagostim.com/" style={linkStyle}>Contato</a></li>
+                <li><a href="#" style={{ ...linkStyle, color: "#007d99", fontWeight: "bold" }}>Login</a></li>
+            </ul>
+        </div>
+    )}
 </header>
 
 
@@ -92,24 +92,25 @@ export default function Home() {
 
 
 
+
             
-            <section id="hero">
-                <span className="desktop-only">
-                    <img src={HeroRectangleTwo} alt="Retangulo um tela inicial" />
-                </span>
-                <img src={HeroRectangleOne} alt="Retangulo dois tela inicial" />
-                <div className="container content">
-                    <p className="desktop-only"></p>
-                    <h1>Bem vindo a ZENITH</h1>
-                    <p>Na Zenith, garantimos a saúde dos seus peixes com tecnologia de ponta: monitoramento preciso de pH, oxigenação e temperatura!</p>
-                    <div className="flex gap-1">
-                        <span><Button text="Cadastre-se" /></span>
-                        <span className="desktop-only">
-                            <Button text="Veja mais" secondary />
-                        </span>
+            <section id="hero" style={{ position: "relative", backgroundColor: "#f0f4f8", padding: "60px 20px", textAlign: "center" }}>
+                <div style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", zIndex: "-1" }}>
+                    <img src={HeroRectangleTwo} alt="Background design" style={{ position: "absolute", top: "10%", left: "5%", maxWidth: "150px" }} />
+                    <img src={HeroRectangleOne} alt="Background design" style={{ position: "absolute", bottom: "10%", right: "5%", maxWidth: "150px" }} />
+                </div>
+                <div className="container content" style={{ maxWidth: "800px", margin: "0 auto" }}>
+                    <h1 style={{ fontSize: "3rem", color: "#2c3e50", marginBottom: "20px" }}>Bem-vindo à <span style={{ color: "#00a8cc" }}>ZENITH</span></h1>
+                    <p style={{ fontSize: "1.2rem", color: "#7f8c8d", marginBottom: "40px", lineHeight: "1.6" }}>
+                        Na Zenith, garantimos a saúde dos seus peixes com tecnologia de ponta: monitoramento preciso de pH, oxigenação e temperatura!
+                    </p>
+                    <div className="flex gap-1" style={{ display: "flex", justifyContent: "center", gap: "15px" }}>
+                        <Button text="Cadastre-se" style={{ padding: "12px 30px", fontSize: "1rem" }} />
+                        <Button text="Veja mais" secondary style={{ padding: "12px 30px", fontSize: "1rem" }} />
                     </div>
                 </div>
             </section>
+
 
 
             <section id="solutions" className="solutions-container">
@@ -158,148 +159,103 @@ export default function Home() {
 
 
 
-            <section style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-            <h1 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Tecnologia que muda vida</h1>
-            <img 
-                src={fishinge} 
-                alt="fish" 
-                style={{ width: '90vw', height: '70vh' }} 
-            />
-            </section>
-
-
-
             <section className="reviews-section" style={{ backgroundColor: "#f9f9f9", padding: "60px 20px", textAlign: "center" }}>
     <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <h2 style={{ fontSize: "2.5rem", marginBottom: "10px" }}>O que nossos clientes dizem</h2>
         <p style={{ fontSize: "1.2rem", marginBottom: "40px" }}>A opinião dos nossos clientes é fundamental para nossa evolução e sucesso!</p>
         
-        <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "20px" }}>
-            {/* Testimonial 1 */}
-            <div style={{ backgroundColor: "white", padding: "30px", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)", flexBasis: "280px", flexGrow: 1, flexShrink: 0 }}>
-                <img src={agro01} alt="Carlos Mendes" style={{ borderRadius: "50%", width: "80px", height: "80px", objectFit: "cover", marginBottom: "20px" }} />
-                <h4 style={{ fontSize: "1.4rem", marginBottom: "5px" }}>Carlos Mendes</h4>
-                <p style={{ fontSize: "1rem", color: "gray" }}>Proprietário de Piscicultura</p>
-                <p style={{ fontSize: "1rem", margin: "20px 0" }}>
-                    A precisão dos sensores de pH e oxigênio da água revolucionou nossa operação, garantindo um ambiente seguro para os peixes e maximizando nosso rendimento.
-                </p>
+        <Swiper
+            modules={[Autoplay, Pagination]}
+            autoplay={{ delay: 3000 }}
+            pagination={{ clickable: true }}
+            spaceBetween={20}
+            slidesPerView={1}
+            breakpoints={{
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            }}
+        >
+            <SwiperSlide>
+                <div style={{ padding: "30px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)" }}>
+                    <img src={agro01} alt="Carlos Mendes" style={{ borderRadius: "50%", width: "80px", height: "80px", marginBottom: "20px" }} />
+                    <h4 style={{ fontSize: "1.4rem", marginBottom: "5px" }}>Carlos Mendes</h4>
+                    <p style={{ fontSize: "1rem", color: "gray" }}>Proprietário de Piscicultura</p>
+                    <p>A precisão dos sensores de pH e oxigênio revolucionou nossa operação.</p>
+                    <a href="#" style={{ display: "inline-block", padding: "10px 20px", backgroundColor: "#2c3e50", color: "white", textDecoration: "none", borderRadius: "5px", marginTop: "20px" }}>Saiba mais sobre Carlos Mendes</a>
+                </div>
+            </SwiperSlide>
 
-                {/* Botão responsivo */}
-                <a 
-                    href="https://www.google.com/search?q=Carlos+Mendes+piscicultura" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    style={{ 
-                        display: "inline-block", 
-                        padding: "10px 20px", 
-                        backgroundColor: "#2c3e50", 
-                        color: "white", 
-                        textDecoration: "none", 
-                        borderRadius: "5px", 
-                        marginTop: "20px",
-                        width: "100%",
-                        textAlign: "center"
-                    }}
-                >
-                    Saiba mais sobre Carlos Mendes
-                </a>
-            </div>
+            <SwiperSlide>
+                <div style={{ padding: "30px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)" }}>
+                    <img src={agro02} alt="Ana Pereira" style={{ borderRadius: "50%", width: "80px", height: "80px", marginBottom: "20px" }} />
+                    <h4 style={{ fontSize: "1.4rem", marginBottom: "5px" }}>Ana Pereira</h4>
+                    <p style={{ fontSize: "1rem", color: "gray" }}>Engenheira Ambiental</p>
+                    <p>Com a tecnologia de monitoramento constante, a qualidade dos peixes aumentou.</p>
+                    <a href="#" style={{ display: "inline-block", padding: "10px 20px", backgroundColor: "#2c3e50", color: "white", textDecoration: "none", borderRadius: "5px", marginTop: "20px" }}>Saiba mais sobre Ana Pereira</a>
+                </div>
+            </SwiperSlide>
 
+            <SwiperSlide>
+                <div style={{ padding: "30px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)" }}>
+                    <img src={agro03} alt="Jorge Silva" style={{ borderRadius: "50%", width: "80px", height: "80px", marginBottom: "20px" }} />
+                    <h4 style={{ fontSize: "1.4rem", marginBottom: "5px" }}>Jorge Silva</h4>
+                    <p style={{ fontSize: "1rem", color: "gray" }}>Técnico em Piscicultura</p>
+                    <p>O sistema de monitoramento de temperatura otimizou os cuidados diários.</p>
+                    <a href="#" style={{ display: "inline-block", padding: "10px 20px", backgroundColor: "#2c3e50", color: "white", textDecoration: "none", borderRadius: "5px", marginTop: "20px" }}>Saiba mais sobre Jorge Silva</a>
+                </div>
+            </SwiperSlide>
 
-            {/* Testimonial 2 */}
-            <div style={{ backgroundColor: "white", padding: "30px", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)", flexBasis: "280px", flexGrow: 1, flexShrink: 0 }}>
-                <img src={agro02} alt="Ana Pereira" style={{ borderRadius: "50%", width: "80px", height: "80px", objectFit: "cover", marginBottom: "20px" }} />
-                <h4 style={{ fontSize: "1.4rem", marginBottom: "5px" }}>Ana Pereira</h4>
-                <p style={{ fontSize: "1rem", color: "gray" }}>Engenheira Ambiental</p>
-                <p style={{ fontSize: "1rem", margin: "20px 0" }}>
-                    Com a tecnologia de monitoramento constante da água, tivemos um aumento significativo na qualidade dos peixes e na segurança da produção.
-                </p>
+            <SwiperSlide>
+                <div style={{ padding: "30px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)" }}>
+                    <img src={agro04} alt="Mariana Costa" style={{ borderRadius: "50%", width: "80px", height: "80px", marginBottom: "20px" }} />
+                    <h4 style={{ fontSize: "1.4rem", marginBottom: "5px" }}>Mariana Costa</h4>
+                    <p style={{ fontSize: "1rem", color: "gray" }}>Bióloga</p>
+                    <p>A integração do monitoramento de pH e temperatura garantiu a longevidade dos peixes.</p>
+                    <a href="#" style={{ display: "inline-block", padding: "10px 20px", backgroundColor: "#2c3e50", color: "white", textDecoration: "none", borderRadius: "5px", marginTop: "20px" }}>Saiba mais sobre Mariana Costa</a>
+                </div>
+            </SwiperSlide>
 
-                {/* Botão responsivo */}
-                <a 
-                    href="https://www.google.com/search?q=Ana+Pereira+engenheira+ambiental" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    style={{ 
-                        display: "inline-block", 
-                        padding: "10px 20px", 
-                        backgroundColor: "#2c3e50", 
-                        color: "white", 
-                        textDecoration: "none", 
-                        borderRadius: "5px", 
-                        marginTop: "20px",
-                        width: "100%",
-                        textAlign: "center"
-                    }}
-                >
-                    Saiba mais sobre Ana Pereira
-                </a>
-            </div>
+            <SwiperSlide>
+                <div style={{ padding: "30px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)" }}>
+                    <img src={agro01} alt="Lucas Almeida" style={{ borderRadius: "50%", width: "80px", height: "80px", marginBottom: "20px" }} />
+                    <h4 style={{ fontSize: "1.4rem", marginBottom: "5px" }}>Lucas Almeida</h4>
+                    <p style={{ fontSize: "1rem", color: "gray" }}>Administrador de Fazendas</p>
+                    <p>A automação dos relatórios facilitou nossa tomada de decisão.</p>
+                    <a href="#" style={{ display: "inline-block", padding: "10px 20px", backgroundColor: "#2c3e50", color: "white", textDecoration: "none", borderRadius: "5px", marginTop: "20px" }}>Saiba mais sobre Lucas Almeida</a>
+                </div>
+            </SwiperSlide>
 
-            {/* Testimonial 3 */}
-            <div style={{ backgroundColor: "white", padding: "30px", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)", flexBasis: "280px", flexGrow: 1, flexShrink: 0 }}>
-                <img src={agro03} alt="Jorge Silva" style={{ borderRadius: "50%", width: "80px", height: "80px", objectFit: "cover", marginBottom: "20px" }} />
-                <h4 style={{ fontSize: "1.4rem", marginBottom: "5px" }}>Jorge Silva</h4>
-                <p style={{ fontSize: "1rem", color: "gray" }}>Técnico em Piscicultura</p>
-                <p style={{ fontSize: "1rem", margin: "20px 0" }}>
-                    A facilidade de usar o sistema de monitoramento de temperatura e oxigenação fez toda a diferença na nossa produção, otimizando os cuidados diários com os tanques.
-                </p>
-
-                {/* Botão responsivo */}
-                <a 
-                    href="https://www.google.com/search?q=Jorge+Silva+técnico+em+piscicultura" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    style={{ 
-                        display: "inline-block", 
-                        padding: "10px 20px", 
-                        backgroundColor: "#2c3e50", 
-                        color: "white", 
-                        textDecoration: "none", 
-                        borderRadius: "5px", 
-                        marginTop: "20px",
-                        width: "100%",
-                        textAlign: "center"
-                    }}
-                >
-                    Saiba mais sobre Jorge Silva
-                </a>
-            </div>
-
-
-            {/* Testimonial 4 */}
-            <div style={{ backgroundColor: "white", padding: "30px", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)", flexBasis: "280px", flexGrow: 1, flexShrink: 0 }}>
-                <img src={agro04} alt="Mariana Costa" style={{ borderRadius: "50%", width: "80px", height: "80px", objectFit: "cover", marginBottom: "20px" }} />
-                <h4 style={{ fontSize: "1.4rem", marginBottom: "5px" }}>Mariana Costa</h4>
-                <p style={{ fontSize: "1rem", color: "gray" }}>Bióloga</p>
-                <p style={{ fontSize: "1rem", margin: "20px 0" }}>
-                    A integração da tecnologia de monitoramento de pH e temperatura foi um divisor de águas para garantir a longevidade e a qualidade dos nossos peixes.
-                </p>
-
-                {/* Botão responsivo */}
-                <a 
-                    href="https://www.google.com/search?q=Mariana+Costa+bióloga" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    style={{ 
-                        display: "inline-block", 
-                        padding: "10px 20px", 
-                        backgroundColor: "#2c3e50", 
-                        color: "white", 
-                        textDecoration: "none", 
-                        borderRadius: "5px", 
-                        marginTop: "20px",
-                        width: "100%",
-                        textAlign: "center"
-                    }}
-                >
-                    Saiba mais sobre Mariana Costa
-                </a>
-            </div>
-
-        </div>
+            <SwiperSlide>
+                <div style={{ padding: "30px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)" }}>
+                    <img src={agro02} alt="Fernanda Lopes" style={{ borderRadius: "50%", width: "80px", height: "80px", marginBottom: "20px" }} />
+                    <h4 style={{ fontSize: "1.4rem", marginBottom: "5px" }}>Fernanda Lopes</h4>
+                    <p style={{ fontSize: "1rem", color: "gray" }}>Gestora de Recursos Hídricos</p>
+                    <p>O sistema inteligente ajudou a reduzir custos operacionais.</p>
+                    <a href="#" style={{ display: "inline-block", padding: "10px 20px", backgroundColor: "#2c3e50", color: "white", textDecoration: "none", borderRadius: "5px", marginTop: "20px" }}>Saiba mais sobre Fernanda Lopes</a>
+                </div>
+            </SwiperSlide>
+        </Swiper>
     </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
