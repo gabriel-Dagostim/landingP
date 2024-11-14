@@ -46,45 +46,48 @@ export default function Home() {
 
     return (
         <>
-            <header className="header-fixed" style={{ backgroundColor: "#ffffff", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)", padding: "10px 20px", position: "fixed", width: "100%", zIndex: "1000" }}>
-    <nav className="flex items-center justify-between" style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <a href="/">
-            <img src={Logo} alt="Logo Zenith" width={120} height={80} style={{ cursor: "pointer" }} />
-        </a>
-        
-        <div className="desktop-only" style={{ display: "flex", gap: "20px", alignItems: "center" }}>
-            <ul className="flex gap-4" style={{ listStyle: "none", margin: 0, padding: 0 }}>
-                <li><a href="https://zenith.gabrieldagostim.com/" style={linkStyle}>Home</a></li>
-                <li><a href="https://www.splabor.com.br/blog/medidor-de-ph/" style={linkStyle}>Soluções</a></li>
-                <li><a href="https://www.peixebr.com.br/" style={linkStyle}>Depoimentos</a></li>
-                <li><a href="https://www.binance.com/pt-BR/markets/overview" style={linkStyle}>Preços</a></li>
-                <li><a href="https://www.gabrieldagostim.com/" style={linkStyle}>Contato</a></li>
+            <header className="header-fixed py-sm">
+    <nav className="flex items-center justify-between">
+        <img src={Logo} alt="Logo DonaFrost" width={150} height={120} />
+        <div className="desktop-only">
+            <ul className="flex gap-1">
+                <li><a href="https://zenith.gabrieldagostim.com/">Home</a></li>
+                <li><a href="https://www.splabor.com.br/blog/medidor-de-ph/3-maneiras-de-se-medir-o-ph-da-agua/#:~:text=Para%20medir%20o%20pH%20da,de%20mudar%C3%A1%20de%20cor%20momentaneamente.">Soluções</a></li>
+                <li><a href="https://www.peixebr.com.br/">Depoimentos</a></li>
+                <li><a href="https://www.binance.com/pt-BR/markets/overview">Preços</a></li>
+                <li><a href="https://www.gabrieldagostim.com/">Contato</a></li>
             </ul>
-            <div>
-                <a href="#" style={{ ...linkStyle, marginRight: "15px", color: "#007d99", fontWeight: "bold" }}>Login</a>
-                <Button text="Cadastre-se" style={{ padding: "10px 20px", backgroundColor: "#00a8cc", color: "#ffffff", border: "none", borderRadius: "5px" }} />
+        </div>
+        <div className="desktop-only">
+            <div className="flex items-center">
+                <a className="reverse-color ml-lg" href="#">Login</a>
+                <Button text="Cadastre-se" />
             </div>
         </div>
-
-        <div className="mobile-menu" style={{ display: "flex", alignItems: "center" }}>
-            <span onClick={() => setShowMobileMenu(!showMobileMenu)} className="btn-wrapper" style={{ cursor: "pointer" }}>
-                <img src={showMobileMenu ? Close : Menu} alt="Menu" width={24} height={24} />
-            </span>
+        <div className="mobile-menu">
+            {showMobileMenu ? (
+                <div className="mobile-menu-content">
+                    <div className="container flex">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#solution">Soluções</a></li>
+                            <li><a href="https://www.peixebr.com.br/">Depoimentos</a></li>
+                            <li><a href="https://pointerpointer.com/">Preços</a></li>
+                            <li><a href="https://www.gabrieldagostim.com/">Contato</a></li>
+                            <li><a className="reverse-color" href="#">Login</a></li>
+                        </ul>
+                        <span onClick={() => setShowMobileMenu(!showMobileMenu)} className="btn-wrapper">
+                            <img src={Close} alt="ícone fechar menu" width={24} height={24} />
+                        </span>
+                    </div>
+                </div>
+            ) : (
+                <span onClick={() => setShowMobileMenu(!showMobileMenu)} className="btn-wrapper">
+                    <img src={Menu} alt="ícone menu" width={24} height={24} />
+                </span>
+            )}
         </div>
     </nav>
-
-    {showMobileMenu && (
-        <div className="mobile-menu-content" style={{ position: "absolute", top: "100%", left: 0, width: "100%", backgroundColor: "#ffffff", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)", padding: "20px 0" }}>
-            <ul style={{ listStyle: "none", margin: 0, padding: "0 20px", textAlign: "center" }}>
-                <li style={{ marginBottom: "10px" }}><a href="#" style={linkStyle}>Home</a></li>
-                <li style={{ marginBottom: "10px" }}><a href="#solution" style={linkStyle}>Soluções</a></li>
-                <li style={{ marginBottom: "10px" }}><a href="https://www.peixebr.com.br/" style={linkStyle}>Depoimentos</a></li>
-                <li style={{ marginBottom: "10px" }}><a href="https://pointerpointer.com/" style={linkStyle}>Preços</a></li>
-                <li style={{ marginBottom: "10px" }}><a href="https://www.gabrieldagostim.com/" style={linkStyle}>Contato</a></li>
-                <li><a href="#" style={{ ...linkStyle, color: "#007d99", fontWeight: "bold" }}>Login</a></li>
-            </ul>
-        </div>
-    )}
 </header>
 
 
@@ -92,9 +95,8 @@ export default function Home() {
 
 
 
-
             
-            <section id="hero" style={{ position: "relative", backgroundColor: "#f0f4f8", padding: "60px 20px", textAlign: "center" }}>
+            <section id="hero" style={{ position: "relative", backgroundColor: "#f0f4f8", padding: "60px 20px", textAlign: "center", marginTop: "5vh" }}>
                 <div style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", zIndex: "-1" }}>
                     <img src={HeroRectangleTwo} alt="Background design" style={{ position: "absolute", top: "10%", left: "5%", maxWidth: "150px" }} />
                     <img src={HeroRectangleOne} alt="Background design" style={{ position: "absolute", bottom: "10%", right: "5%", maxWidth: "150px" }} />
@@ -113,43 +115,71 @@ export default function Home() {
 
 
 
-            <section id="solutions" className="solutions-container">
-                <h2 className="section-title">Inovação na Piscicultura</h2>
-                <p className="section-description">
-                    Com a Zenith, a tecnologia se torna sua aliada. Monitore em tempo real o pH, oxigênio e temperatura da sua água com precisão e praticidade!
-                </p>
-                <div className="solutions-grid">
-                    <div className="solution-card">
-                        <img src={datalogo} alt="Precisão de dados" className="solution-logo" />
-                        <h3>Precisão de dados</h3>
-                        <p>
-                            Garantimos dados precisos sobre o pH, oxigênio e temperatura da sua água para que você alcance o sucesso na piscicultura.
-                        </p>
-                        <a href="#" className="learn-more">Saiba mais</a>
-                    </div>
-                    <div className="solution-card">
-                        <img src={cellph} alt="Dados na palma da mão" className="solution-logo" />
-                        <h3>Dados na palma da mão</h3>
-                        <p>
-                            Acompanhe todos os dados em tempo real através de nosso aplicativo, disponível em smartphones e tablets.
-                        </p>
-                        <a href="#" className="learn-more">Saiba mais</a>
-                    </div>
-                    <div className="solution-card">
-                        <img src={ialogo} alt="Análise por IA" className="solution-logo" />
-                        <h3>Análise por IA</h3>
-                        <p>
-                            Nossa IA ajuda a monitorar e cuidar dos tanques, oferecendo dicas personalizadas para otimizar a piscicultura.
-                        </p>
-                        <a href="#" className="learn-more">Saiba mais</a>
-                    </div>
-                </div>
+            <section style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+            <h1 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Tecnologia que muda vida</h1>
+            <img 
+                src={fishinge} 
+                alt="fish" 
+                style={{ width: '90vw', height: '70vh' }} 
+            />
             </section>
 
 
+            
+
+
+           
 
 
 
+
+
+            <section id="how-it-works" style={{ backgroundColor: "#ffffff", padding: "60px 20px", textAlign: "center" }}>
+    <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        <h2 style={{ fontSize: "2.5rem", color: "#2c3e50", marginBottom: "20px" }}>Como Funciona</h2>
+        <p style={{ fontSize: "1.2rem", color: "#7f8c8d", marginBottom: "40px" }}>
+            Entenda como a Zenith utiliza tecnologia de ponta para garantir a saúde e o crescimento dos seus peixes.
+        </p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "center" }}>
+            
+            {/* Etapa 1 - Instalação dos Sensores */}
+            <div style={{ flex: "1 1 250px", padding: "20px", backgroundColor: "#f9f9f9", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)" }}>
+                <img src={datalogo} alt="Instalação dos Sensores" style={{ width: "80px", height: "80px", marginBottom: "20px" }} />
+                <h3 style={{ fontSize: "1.5rem", color: "#2c3e50", marginBottom: "10px" }}>1. Instalação dos Sensores</h3>
+                <p style={{ fontSize: "1rem", color: "#7f8c8d" }}>
+                    Nossos especialistas instalam sensores de pH, oxigênio e temperatura em seus tanques, garantindo monitoramento contínuo.
+                </p>
+            </div>
+            
+            {/* Etapa 2 - Monitoramento em Tempo Real */}
+            <div style={{ flex: "1 1 250px", padding: "20px", backgroundColor: "#f9f9f9", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)" }}>
+                <img src={cellph} alt="Monitoramento em Tempo Real" style={{ width: "80px", height: "80px", marginBottom: "20px" }} />
+                <h3 style={{ fontSize: "1.5rem", color: "#2c3e50", marginBottom: "10px" }}>2. Monitoramento em Tempo Real</h3>
+                <p style={{ fontSize: "1rem", color: "#7f8c8d" }}>
+                    Acompanhe todos os dados diretamente no seu smartphone ou tablet através do nosso aplicativo intuitivo.
+                </p>
+            </div>
+            
+            {/* Etapa 3 - Análise Inteligente por IA */}
+            <div style={{ flex: "1 1 250px", padding: "20px", backgroundColor: "#f9f9f9", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)" }}>
+                <img src={ialogo} alt="Análise Inteligente por IA" style={{ width: "80px", height: "80px", marginBottom: "20px" }} />
+                <h3 style={{ fontSize: "1.5rem", color: "#2c3e50", marginBottom: "10px" }}>3. Análise Inteligente por IA</h3>
+                <p style={{ fontSize: "1rem", color: "#7f8c8d" }}>
+                    Nossa inteligência artificial processa os dados coletados, identificando padrões e fornecendo recomendações para otimizar a criação.
+                </p>
+            </div>
+            
+            {/* Etapa 4 - Ações e Otimizações */}
+            <div style={{ flex: "1 1 250px", padding: "20px", backgroundColor: "#f9f9f9", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)" }}>
+                <img src={cellph} alt="Ações e Otimizações" style={{ width: "80px", height: "80px", marginBottom: "20px" }} />
+                <h3 style={{ fontSize: "1.5rem", color: "#2c3e50", marginBottom: "10px" }}>4. Ações e Otimizações</h3>
+                <p style={{ fontSize: "1rem", color: "#7f8c8d" }}>
+                    Com base nas análises, tome decisões informadas para melhorar a saúde dos peixes e aumentar a produtividade da sua piscicultura.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
@@ -237,6 +267,72 @@ export default function Home() {
         </Swiper>
     </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="our-story" style={{ backgroundColor: "#ffffff", padding: "60px 20px", textAlign: "center" }}>
+    <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        <h2 style={{ fontSize: "2.5rem", color: "#2c3e50", marginBottom: "20px" }}>Nossa História</h2>
+        <p style={{ fontSize: "1.2rem", color: "#7f8c8d", marginBottom: "40px" }}>
+            Conheça a jornada da Zenith, desde a sua concepção até se tornar referência em tecnologia para piscicultura.
+        </p>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "40px" }}>
+            
+            {/* História da Empresa */}
+            <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", gap: "20px", alignItems: "center", justifyContent: "center" }}>
+                
+                {/* Texto da História */}
+                <div style={{ flex: "1 1 500px", textAlign: "left" }}>
+                    <h3 style={{ fontSize: "2rem", color: "#2c3e50", marginBottom: "15px" }}>O Início</h3>
+                    <p style={{ fontSize: "1rem", color: "#7f8c8d", marginBottom: "15px", lineHeight: "1.6" }}>
+                        Em 2024, durante o renomado Show Rural, nossos fundadores identificaram uma lacuna significativa no monitoramento e gestão da piscicultura. Observando os desafios enfrentados pelos piscicultores, surgiu a ideia de desenvolver uma solução tecnológica inovadora para otimizar a criação de peixes.
+                    </p>
+                    
+                    <h3 style={{ fontSize: "2rem", color: "#2c3e50", marginBottom: "15px" }}>A Fundação da Zenith</h3>
+                    <p style={{ fontSize: "1rem", color: "#7f8c8d", marginBottom: "15px", lineHeight: "1.6" }}>
+                        Com paixão pela tecnologia e compromisso com a sustentabilidade, a Zenith foi oficialmente fundada no início de 2025. Nossa missão sempre foi fornecer ferramentas precisas e acessíveis para que piscicultores possam maximizar sua produtividade enquanto mantêm a saúde e o bem-estar dos peixes.
+                    </p>
+                    
+                    <h3 style={{ fontSize: "2rem", color: "#2c3e50", marginBottom: "15px" }}>Crescimento e Inovação</h3>
+                    <p style={{ fontSize: "1rem", color: "#7f8c8d", lineHeight: "1.6" }}>
+                        Desde então, a Zenith tem se dedicado a inovar continuamente, integrando inteligência artificial e análises de dados avançadas em nossas soluções. Hoje, somos reconhecidos como líderes no setor, ajudando piscicultores a alcançar excelência operacional e sustentabilidade ambiental.
+                    </p>
+                </div>
+                
+                {/* Imagem Representativa */}
+                <div style={{ flex: "1 1 400px" }}>
+                    <img 
+                        src={fishinge} 
+                        alt="Nossa História" 
+                        style={{ width: "100%", height: "auto", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)" }} 
+                    />
+                </div>
+            </div>
+            
+            {/* Citação Inspiradora */}
+            <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px", backgroundColor: "#f9f9f9", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)" }}>
+                <p style={{ fontSize: "1.2rem", color: "#2c3e50", fontStyle: "italic" }}>
+                    "Transformamos desafios em oportunidades, utilizando a tecnologia para promover uma piscicultura mais eficiente e sustentável."
+                </p>
+                <p style={{ fontSize: "1rem", color: "#7f8c8d", textAlign: "right", marginTop: "10px" }}>
+                    — Fundador da Zenith
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
 
@@ -511,7 +607,38 @@ export default function Home() {
 
 
 
-
+<section id="solutions" className="solutions-container">
+                <h2 className="section-title">Inovação na Piscicultura</h2>
+                <p className="section-description">
+                    Com a Zenith, a tecnologia se torna sua aliada. Monitore em tempo real o pH, oxigênio e temperatura da sua água com precisão e praticidade!
+                </p>
+                <div className="solutions-grid">
+                    <div className="solution-card">
+                        <img src={datalogo} alt="Precisão de dados" className="solution-logo" />
+                        <h3>Precisão de dados</h3>
+                        <p>
+                            Garantimos dados precisos sobre o pH, oxigênio e temperatura da sua água para que você alcance o sucesso na piscicultura.
+                        </p>
+                        <a href="#" className="learn-more">Saiba mais</a>
+                    </div>
+                    <div className="solution-card">
+                        <img src={cellph} alt="Dados na palma da mão" className="solution-logo" />
+                        <h3>Dados na palma da mão</h3>
+                        <p>
+                            Acompanhe todos os dados em tempo real através de nosso aplicativo, disponível em smartphones e tablets.
+                        </p>
+                        <a href="#" className="learn-more">Saiba mais</a>
+                    </div>
+                    <div className="solution-card">
+                        <img src={ialogo} alt="Análise por IA" className="solution-logo" />
+                        <h3>Análise por IA</h3>
+                        <p>
+                            Nossa IA ajuda a monitorar e cuidar dos tanques, oferecendo dicas personalizadas para otimizar a piscicultura.
+                        </p>
+                        <a href="#" className="learn-more">Saiba mais</a>
+                    </div>
+                </div>
+            </section>
 
 
 
