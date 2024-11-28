@@ -15,7 +15,7 @@ import cellph from "../assets/images/smartphone.png";
 import HeroRectangleOne from "../assets/images/rectangleOne.png";
 import HeroRectangleTwo from "../assets/images/rectangleTwo.png";
 import Logo from "../assets/logo.png";
-import Button from "../components/button.tsx";
+import Contato from "../components/Contact.tsx";
 import fishinge from "../assets/images/fishing.svg";
 import "../styles/header.css";
 import "../styles/hero.css";
@@ -61,7 +61,7 @@ export default function Home() {
         <div className="desktop-only">
             <div className="flex items-center">
                 <a className="reverse-color ml-lg" href="#">Login</a>
-                <Button text="Cadastre-se" />
+               
             </div>
         </div>
         <div className="mobile-menu">
@@ -107,8 +107,6 @@ export default function Home() {
                         Na Zenith, garantimos a saúde dos seus peixes com tecnologia de ponta: monitoramento preciso de pH, oxigenação e temperatura!
                     </p>
                     <div className="flex gap-1" style={{ display: "flex", justifyContent: "center", gap: "15px" }}>
-                        <Button text="Cadastre-se" style={{ padding: "12px 30px", fontSize: "1rem" }} />
-                        <Button text="Veja mais" secondary style={{ padding: "12px 30px", fontSize: "1rem" }} />
                     </div>
                 </div>
             </section>
@@ -689,78 +687,9 @@ export default function Home() {
 
 
 
-<section style={{ backgroundColor: "#f4f4f4", padding: "60px 20px", textAlign: "center" }}>
-    <div style={{ maxWidth: "600px", margin: "0 auto", padding: "40px", backgroundColor: "white", borderRadius: "12px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)" }}>
-        <h2 style={{ fontSize: "2rem", marginBottom: "20px", color: "#2c3e50" }}>Fale Conosco</h2>
-        <p style={{ fontSize: "1rem", color: "#7f8c8d", marginBottom: "40px" }}>Preencha o formulário abaixo para entrar em contato conosco.</p>
-
-        <form action="mailto:seu-email@example.com" method="post" encType="text/plain">
-            {/* Nome */}
-            <div style={{ marginBottom: "20px", textAlign: "left" }}>
-                <label htmlFor="name" style={{ fontSize: "1rem", color: "#2c3e50" }}>Nome:</label>
-                <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
-                    style={{ width: "100%", padding: "10px", marginTop: "8px", borderRadius: "5px", border: "1px solid #ccc", fontSize: "1rem" }} 
-                    required 
-                />
-            </div>
-
-            {/* Email */}
-            <div style={{ marginBottom: "20px", textAlign: "left" }}>
-                <label htmlFor="email" style={{ fontSize: "1rem", color: "#2c3e50" }}>E-mail:</label>
-                <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    style={{ width: "100%", padding: "10px", marginTop: "8px", borderRadius: "5px", border: "1px solid #ccc", fontSize: "1rem" }} 
-                    required 
-                />
-            </div>
-
-            {/* Assunto */}
-            <div style={{ marginBottom: "20px", textAlign: "left" }}>
-                <label htmlFor="subject" style={{ fontSize: "1rem", color: "#2c3e50" }}>Assunto:</label>
-                <input 
-                    type="text" 
-                    id="subject" 
-                    name="subject" 
-                    style={{ width: "100%", padding: "10px", marginTop: "8px", borderRadius: "5px", border: "1px solid #ccc", fontSize: "1rem" }} 
-                    required 
-                />
-            </div>
-
-            {/* Mensagem */}
-            <div style={{ marginBottom: "20px", textAlign: "left" }}>
-                <label htmlFor="message" style={{ fontSize: "1rem", color: "#2c3e50" }}>Mensagem:</label>
-                <textarea 
-                    id="message" 
-                    name="message"
-                    style={{ width: "100%", padding: "10px", marginTop: "8px", borderRadius: "5px", border: "1px solid #ccc", fontSize: "1rem" }} 
-                    required 
-                ></textarea>
-            </div>
-
-            {/* Botão de envio */}
-            <button 
-                type="submit" 
-                style={{ 
-                    padding: "12px 30px", 
-                    backgroundColor: "#2c3e50", 
-                    color: "white", 
-                    border: "none", 
-                    borderRadius: "5px", 
-                    fontSize: "1rem", 
-                    cursor: "pointer", 
-                    width: "100%" 
-                }}
-            >
-                Enviar
-            </button>
-        </form>
-    </div>
-</section>
+        <main className="flex justify-center items-center h-screen bg-gray-100">
+            <Contato />
+        </main>
 
 
 
